@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {
-    AiOutlineHome,
-} from 'react-icons/ai';
+import { AiOutlineHome } from 'react-icons/ai';
+
+import { IoGridOutline, IoHeartOutline } from 'react-icons/io5';
 
 export const SidebarData = [
     {
@@ -12,17 +12,12 @@ export const SidebarData = [
     },
     {
         title: "Home",
-        path: "/",
-        icon: <AiOutlineHome />
+        path: "/discover",
+        icon: <IoGridOutline />
     },
     {
         title: "Home",
-        path: "/",
-        icon: <AiOutlineHome />
-    },
-    {
-        title: "Home",
-        path: "/",
-        icon: <AiOutlineHome />
+        path: "/saved",
+        icon: <IoHeartOutline />
     },
 ]

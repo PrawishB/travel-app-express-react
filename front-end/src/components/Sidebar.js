@@ -24,21 +24,24 @@ const Sidebar = () => {
 
     return (
         <div className="text-white fixed outline-none">
-            <div className={ open ? "active transition-width w-64 h-screen" : "transition-width w-14 h-screen" }>
-                <ul className="bg-gray-900 h-full space-y-5 flex flex-col pl-3">
-                    <li className="text-3xl pt-4 hover:text-blue-700" onClick={showSidebar}>{ open ? <IoClose /> : <IoMenu />}</li>
-                    {SidebarData.map((data, index) => {
-                        return (
-                            <Link to={data.path}>
-                                <div className={ data.path === location.pathname ? "text-blue-900" : "" } key={index}>
-                                <li className="flex space-x-4 items-center cursor-pointer group" onClick={closeSidebar}>
-                                    <div className="text-3xl group-hover:text-blue-700">{data.icon}</div>
-                                    <div className={ open ? "text-xl group-hover:text-blue-700" : "hidden"}>{data.title}</div>
-                                </li>
-                                </div>
-                            </Link>
-                        );
-                    })}
+            <div className={ open ? "active transition-width w-64 h-screen" : "transition-width w-16 h-screen" }>
+                <ul className="bg-gray-900 h-full flex flex-col justify-between px-4 py-4">
+                    <li className="text-3xl hover:text-blue-700" onClick={showSidebar}>{ open ? <IoClose /> : <IoMenu />}</li>
+                    <li className="space-x-4">
+                        {SidebarData.map((data, index) => {
+                            return (
+                                <Link to={data.path}>
+                                    <div className={ data.path === location.pathname ? "text-blue-900" : "" } key={index}>
+                                    <div className="flex space-x-4 items-center cursor-pointer group" onClick={closeSidebar}>
+                                        <div className="text-3xl group-hover:text-blue-700">{data.icon}</div>
+                                        <div className={ open ? "text-xl group-hover:text-blue-700" : "hidden"}>{data.title}</div>
+                                    </div>
+                                    </div>
+                                </Link>
+                            );
+                        })}
+                    </li>
+                    <li className="w-10 h-10 rounded-full bg-red-50 -mx-1"></li>
                 </ul>
             </div>
         </div>
